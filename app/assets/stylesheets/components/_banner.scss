@@ -1,0 +1,68 @@
+.banner__box{
+  position: relative;
+  width: 100%;
+  // border: 2px solid red;
+}
+
+.banner {
+  width: 100%;
+  height: 350px;
+  object-fit:cover;
+  object-position: top;
+  overflow:hidden;
+  background-position: top;
+  background-repeat: no-repeat;
+  background:scroll;
+  &__shadow {
+    position: absolute;
+    left:0px;
+    bottom: -7px;
+    width: 100%;
+    height: 50px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #0e0e0e7a, #0f0f0ffc, #0e0e0e);
+  }
+}
+.banner__box_text{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.index__title{
+  height: 69px;
+  margin: 0;
+  text-align: center;
+  background-color: $bg-secondary;
+  color: $txt-white;
+  font-size: 3rem;
+  font-weight: 700;
+  border: 2px solid rgb(253, 253, 253);
+  border-radius: 5px;
+  padding: 5px;
+
+  // transform: translateY(-50px 50px);
+  // margin: -30px auto;
+  // z-index: 3;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner_new {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url();
+}

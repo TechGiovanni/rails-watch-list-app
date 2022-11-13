@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color:$txt-white;
+}
+li{
+  list-style: none;
+}
+body{
+  background-color: $bg-base;
+  overflow-x: hidden;
+  position: relative;
+}
+p{
+  margin: 0;
+}
+.wrapper{
+  max-width: 1400px;
+  height: 500px;
+  padding: 0px;
+  margin: 40px auto;
+  // border: 1px solid red;
+}
+
+// resources :movies, only: %i[index show new create] do
+//     resources :bookmarks, only: %i[create]
+//     resources :lists, only: %i[create]
+//   end

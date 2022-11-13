@@ -1,5 +1,5 @@
 <div class="banner__box">
-  <%= cl_image_tag("ehmcnldlqdfndl5whlmk", class: 'banner', style: 'background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))')%>
+  <%= cl_image_tag("https://res.cloudinary.com/dppymdnxh/image/upload/v1668203187/MovieListApp/vmoqijzbotvhobjrwp4h.jpg", class: 'banner', style: 'background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))')%>
   <div class="banner__box_text">
     <h2 class="index__title"><%= @list.name.capitalize %></h2></div>
     <div class="banner__shadow"></div>
@@ -12,6 +12,7 @@
   <div class="new__container">
 
     <div class="new__form">
+    <p><span data-controller="typed-js"></span></p>
       <h2 class="new__form_title">Choose A Movie To Your List</h2>
       <ul class="form__ul">
           <li class="new__form_show">
