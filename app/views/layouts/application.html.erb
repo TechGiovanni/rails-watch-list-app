@@ -7,7 +7,7 @@
     <%= csp_meta_tag %>
 
     <%# font-awesome  %>
-    `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">`
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
@@ -17,7 +17,7 @@
     <nav class="nav navbar__sticky">
       <div class="nav__container">
         <div ><%= link_to root_path do %>
-          <%= image_tag("../../assets/images/logo.png", class:'logo') %><% end %>
+          <%= image_tag("logo.png", class:'logo') %><% end %>
         </div><!--logo end-->
         <p class="nav__banner_text">Create a list of your favorite movies 🫶</p>
         <div class="nav__user-links">

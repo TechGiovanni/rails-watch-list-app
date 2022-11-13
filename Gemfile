@@ -29,6 +29,8 @@ gem 'jbuilder'
 
 # Custom Gems
 gem 'autoprefixer-rails'
+gem 'cloudinary'
+gem 'dotenv-rails', groups: %i[development test]
 gem 'font-awesome-rails'
 gem 'font-awesome-sass', '~> 6.1'
 gem 'sassc-rails'
