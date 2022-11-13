@@ -14,7 +14,6 @@ class BookmarksController < ApplicationController
     if @bookmark.save
       redirect_to list_path(@list)
     else
-      @review = Review.new
       render :new, status: :unprocessable_entity
       # rerender the new method in the same controller
     end
