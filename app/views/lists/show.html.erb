@@ -1,0 +1,32 @@
+<div class="banner__box">
+  <%= cl_image_tag("ehmcnldlqdfndl5whlmk", class: 'banner', style: 'background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))')%>
+  <div class="banner__box_text">
+    <h2 class="index__title"><%= @list.name.capitalize %></h2>
+  </div>
+    <div class="banner__shadow"></div>
+</div>
+
+<div class="wrapper">
+    <div class="card_wrapper">
+        <div>
+          <% @list.movies.each do |movie| %>
+            <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+            <div class="flex_poster">
+              <p class="poster__box_img"> <%= image_tag movie.poster_url, alt: movie.title, class: 'movie_poster ' %> </p>
+              <div class="poster__text">
+                <p class="poster__box_rating">Rating: <span class="poster__box_rating--span"><%= movie.rating %> <i class="fa-solid fa-star"></i>  </span></p>
+                <p class="poster__text--title"> <%= movie.title %> </p>
+                <p class=""> <%= movie.overview %> </p>
+                <p class="poster__text--comment"> ~ <%= bookmark.comment %> </p>
+                <%= link_to fa_icon('circle-xmark'), bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete__btn delete__btn--show' %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+      <%= link_to new_list_bookmark_path(@list), class:'add_movie_btn' do %>
+        <p>Bookmark A Movie</p>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsWatchListApp</title>
+    <title>RailsWatchList</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <%# font-awesome  %>
+    `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">`
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body>
+    <nav class="nav navbar__sticky">
+      <div class="nav__container">
+        <div ><%= link_to root_path do %>
+          <%= cl_image_tag("removal.ai__tmp-636fdcd950445_OCXJYK_kuekru", class:'logo') %><% end %>
+        </div><!--logo end-->
+        <p class="nav__banner_text">Create a list of your favorite movies 🫶</p>
+        <div class="nav__user-links">
+          <div>
+          <%= link_to "Create A Movie List", new_list_path, class: 'nav__create_list_btn btn btn-primary text text-light' %>
+          </div>
+          <ul class="navbar-nav me-auto">
+            <div class="nav__my_list_btn">
+              <%= link_to "My List", root_path, class: "btn-gradient-2 nav-link" %>
+            </div>
+          </ul>
+        </div>
+      </div><!--nav end-->
+    </nav>
     <%= yield %>
   </body>
 </html>

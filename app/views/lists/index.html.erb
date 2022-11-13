@@ -1,0 +1,21 @@
+<div class="banner__box">
+  <%= cl_image_tag(("vmoqijzbotvhobjrwp4h"), class: 'banner', style: 'background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4))')%>
+  <div class="banner__box_text">
+    <h2 class="index__title">My Lists</h2></div>
+    <div class="banner__shadow"></div>
+  </div>
+</div>
+<div class="wrapper">
+  <ul class="contain">
+    <% @lists.map do |list| %>
+        <li class="link__box">
+          <%= link_to list_path(list) do %>
+              <div class="index__card", style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : asset_path(@images.sample) %>)">
+                <h3 class="index__card_homeText"><%= list.name.upcase %></h3>
+                  <%= link_to fa_icon("circle-xmark"), list, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete__btn'%>
+              </div>
+          <% end %>
+        </li>
+    <% end %>
+  </ul>
+</div>
