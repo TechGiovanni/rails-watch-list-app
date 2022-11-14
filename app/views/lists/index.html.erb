@@ -7,6 +7,8 @@
 </div>
 <div class="wrapper">
   <ul class="contain">
+
+   <p><%= @lists.length.zero? ? "Please create a list" : nil %></p>
     <% @lists.map do |list| %>
         <li class="link__box">
           <%= link_to list_path(list) do %>
