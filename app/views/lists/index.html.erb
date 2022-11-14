@@ -12,7 +12,7 @@
           <%= link_to list_path(list) do %>
               <div class="index__card", style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : asset_path(@images.sample) %>)">
                 <h3 class="index__card_homeText"><%= list.name.upcase %></h3>
-                  <%= link_to fa_icon("circle-xmark"), list, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete__btn'%>
+                  <%= link_to fa_icon("circle-xmark"), list, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete__btn--index'%>
               </div>
           <% end %>
         </li>
