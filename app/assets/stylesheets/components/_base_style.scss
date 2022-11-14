@@ -24,6 +24,14 @@ p{
   margin: 40px auto;
   // border: 1px solid red;
 }
+.wrapper--index{
+  max-width: 1400px;
+  height: 100%;
+  padding: 0px;
+  margin: 40px auto;
+  // border: 1px solid red;
+}
+
 
 // resources :movies, only: %i[index show new create] do
 //     resources :bookmarks, only: %i[create]

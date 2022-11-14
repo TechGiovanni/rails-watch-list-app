@@ -5,19 +5,26 @@
     <div class="banner__shadow"></div>
   </div>
 </div>
-<div class="wrapper">
-  <ul class="contain">
 
-   <p><%= @lists.length.zero? ? "Please create a list" : nil %></p>
-    <% @lists.map do |list| %>
-        <li class="link__box">
-          <%= link_to list_path(list) do %>
-              <div class="index__card", style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : asset_path(@images.sample) %>)">
-                <h3 class="index__card_homeText"><%= list.name.upcase %></h3>
-                  <%= link_to fa_icon("circle-xmark"), list, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete__btn--index'%>
-              </div>
-          <% end %>
-        </li>
-    <% end %>
+ <div class="wrapper">
+
+  <ul class="contain">
+   <% if @lists.length.zero? %>
+     <%= link_to new_list_path, class:'add_movie_btn' do %>
+        <p>Create A Movie List</p>
+      <% end %>
+  <% end %>
+
+      <% @lists.map do |list| %>
+          <li class="link__box"></li>
+            <%= link_to list_path(list) do %>
+                <div class="index__card", style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : asset_path(@images.sample) %>)">
+                  <h3 class="index__card_homeText"><%= list.name.upcase %></h3>
+                    <%= link_to fa_icon("circle-xmark"), list, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete__btn--index'%>
+                </div>
+            <% end %>
+          </li>
+      <% end %>
+
   </ul>
 </div>
