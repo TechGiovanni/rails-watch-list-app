@@ -14,11 +14,13 @@
             <div class="flex_poster">
               <p class="poster__box_img"> <%= image_tag movie.poster_url, alt: movie.title, class: 'movie_poster ' %> </p>
               <div class="poster__text">
-                <p class="poster__box_rating">Rating: <span class="poster__box_rating--span"><%= movie.rating %> <i class="fa-solid fa-star"></i>  </span></p>
-                <p class="poster__text--title"> <%= movie.title %> </p>
-                <p class=""> <%= movie.overview %> </p>
-                <p class="poster__text--comment"> ~ <%= bookmark.comment %> </p>
-                <%= link_to fa_icon('circle-xmark'), bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete__btn delete__btn--show' %>
+                <p class="poster__box_rating">Rating: <span class="poster__box_rating--span"><%= movie.rating %> <i class="fa-solid fa-star star__scale"></i>  </span></p>
+                <div class="poster__text_wrapper">
+                  <p class="poster__text--title"> <%= movie.title %> </p>
+                  <p class=""> <%= movie.overview %> </p>
+                  <p class="poster__text--comment"> ~ <%= bookmark.comment %> </p>
+                </div>
+                <%= link_to fa_icon('circle-xmark', class: 'delete__btn--show'), bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete__btn delete__btn--show' %>
               </div>
             </div>
           <% end %>
