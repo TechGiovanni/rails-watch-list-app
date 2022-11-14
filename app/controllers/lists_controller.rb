@@ -14,6 +14,7 @@ class ListsController < ApplicationController
 
   def show
     @bookmark = Bookmark.new
+    banner
   end
 
   def new
@@ -42,5 +43,13 @@ class ListsController < ApplicationController
 
   def list_params
     params.require(:list).permit(:name, :photo)
+  end
+
+  def banner
+    @banners = [
+      'https://res.cloudinary.com/dppymdnxh/image/upload/v1668386585/MovieListApp/6366_i75e0x.jpg',
+      'https://res.cloudinary.com/dppymdnxh/image/upload/v1668203187/MovieListApp/vmoqijzbotvhobjrwp4h.jpg',
+      'https://res.cloudinary.com/dppymdnxh/image/upload/v1668203186/MovieListApp/ehmcnldlqdfndl5whlmk.jpg'
+    ]
   end
 end
